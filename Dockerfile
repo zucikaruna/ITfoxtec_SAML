@@ -12,7 +12,5 @@ WORKDIR /app
 EXPOSE 8081
 EXPOSE 443
 COPY --from=build1 /app/ITfoxtec_SAML/out .
-ADD zucisystems.cer:/container/cert/path
-RUN update-ca-certificates
 
 ENTRYPOINT ["dotnet", "Okta_SAML_Example.dll"]
